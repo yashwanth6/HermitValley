@@ -146,12 +146,17 @@
 
   .cartInput > button {
     padding: 1.5vmax;
+    padding-right: 1.5vmax;
   }
 
-  .cartInput > input {
+  .cartInput > h6 {
+    border: none;
+    padding: 0.5vmax;
     width: 2vmax;
-    padding: 1.5vmax;
-    font: 400 1.8vmax "Roboto";
+    text-align: center;
+    outline: none;
+    font: 400 0.8vmax "Roboto";
+    color: rgba(0, 0, 0, 0.74);
   }
 
   .cartSubtotal {
