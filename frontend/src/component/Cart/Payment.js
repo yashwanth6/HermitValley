@@ -1,7 +1,6 @@
-import React, { Fragment, useEffect, useRef } from "react";
+import React, { Fragment,useEffect, useRef } from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import { useSelector, useDispatch } from "react-redux";
-import MetaData from "../layout/MetaData";
 import { Typography } from "@material-ui/core";
 import { useAlert } from "react-alert";
 import {
@@ -31,6 +30,7 @@ const Payment = ({ history }) => {
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
   const { error } = useSelector((state) => state.newOrder);
+
 
   const paymentData = {
     amount: Math.round(orderInfo.totalPrice * 100),
@@ -107,16 +107,38 @@ const Payment = ({ history }) => {
     }
   };
 
+ 
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
+      window.onload = function() {
+        //considering there aren't any hashes in the urls already
+        if(!window.location.hash) {
+            //setting window location
+            window.location = window.location + '#loaded';
+            //using reload() method to reload web page
+            window.location.reload();
+        }
     }
+    }
+    window.onload = function() {
+      //considering there aren't any hashes in the urls already
+      if(!window.location.hash) {
+          //setting window location
+          window.location = window.location + '#loaded';
+          //using reload() method to reload web page
+          window.location.reload();
+      }
+  }
   }, [dispatch, error, alert]);
 
+
   return (
+    <body>
+    <meta http-equiv="refresh" content="1000"></meta>
     <Fragment>
-      <MetaData title="Payment" />
+     
       <CheckoutSteps activeStep={2} />
       <div className="paymentContainer">
         <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
@@ -143,6 +165,7 @@ const Payment = ({ history }) => {
         </form>
       </div>
     </Fragment>
+    </body>
   );
 };
 

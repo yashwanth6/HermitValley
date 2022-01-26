@@ -1,9 +1,6 @@
-import React, {Component} from "react";
-import { ReactNavbar } from "overlay-navbar";
+import React from "react";
 import logo from "../../../images/logo.png";
-import { Button, Navbar , Nav, NavDropdown} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Container } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const options = {
@@ -44,8 +41,11 @@ const Header = () => {
   
     <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
     <ul className="navbar-nav">
+    <li className="nav-item">
+      <Link to ="/home" className="nav-link">Home</Link>
+      </li>
       <li className="nav-item">
-      <Link to ="/login" className="nav-link">Login</Link>
+      <Link to ="/" className="nav-link">Login</Link>
       </li>
       <li className="nav-item">
       <Link to ="/products" className="nav-link">Products</Link>

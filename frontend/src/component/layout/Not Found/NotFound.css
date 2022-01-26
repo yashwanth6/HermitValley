@@ -25,6 +25,16 @@
   text-decoration: none;
   margin: 2vmax;
 }
+.PageNotFound > button{
+    border: none;
+    background-color: tomato;
+    color: white;
+    font: 300 0.9vmax "Roboto";
+    width: 20%;
+    padding: 0.8vmax;
+    transition: all 0.5s;
+    outline: none;
+}
 
 @media screen and (max-width: 600px) {
   .PageNotFound > a {

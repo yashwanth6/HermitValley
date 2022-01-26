@@ -4,6 +4,8 @@ import MetaData from "../layout/MetaData";
 import Loader from "../layout/Loader/Loader";
 import { Link } from "react-router-dom";
 import "./Profile.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const Profile = ({ history }) => {
   const { user, loading, isAuthenticated } = useSelector((state) => state.user);
@@ -14,11 +16,36 @@ const Profile = ({ history }) => {
     }
   }, [history, isAuthenticated]);
   return (
+    
     <Fragment>
       {loading ? (
         <Loader />
       ) : (
+        
+        
         <Fragment>
+          <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul className="navbar-nav">
+    <li className="nav-item">
+      <Link to ="/home" className="nav-link">Home</Link>
+      </li>
+      <li className="nav-item">
+      <Link to ="/login" className="nav-link">Login</Link>
+      </li>
+      <li className="nav-item">
+      <Link to ="/products" className="nav-link">Products</Link>
+      </li>
+      <li className="nav-item">
+      <Link to ="/contact" className="nav-link">Contact</Link>
+      </li>
+      <li className="nav-item">
+      <Link to ="/about" className="nav-link">About</Link>
+      </li>
+      <li className="nav-item">
+      <Link to ="/cart" className="nav-link">Cart</Link>
+      </li>
+    </ul>
+    </nav>
           <MetaData title={`${user.name}'s Profile`} />
           <div className="profileContainer">
             <div>
@@ -49,6 +76,7 @@ const Profile = ({ history }) => {
         </Fragment>
       )}
     </Fragment>
+    
   );
 };
 

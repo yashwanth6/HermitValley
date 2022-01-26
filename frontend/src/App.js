@@ -81,7 +81,7 @@ function App() {
       )}
 
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/product/:id" component={ProductDetails} />
         <Route exact path="/products" component={Products} />
         <Route path="/products/:keyword" component={Products} />
@@ -106,7 +106,7 @@ function App() {
 
         <Route exact path="/password/reset/:token" component={ResetPassword} />
 
-        <Route exact path="/login" component={LoginSignUp} />
+        <Route exact path="/" component={LoginSignUp} />
 
         <Route exact path="/cart" component={Cart} />
 
